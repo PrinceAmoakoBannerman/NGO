@@ -32,12 +32,12 @@ html, body {
 }
 
 .logo img {
-  height: 250px;.
+  height: 250px;
   width: auto;           /* Maintain aspect ratio */
-  filter: brightness(2.5) contrast(1.5);  /* Increase brightness and contrast */
+   /* Increase brightness and contrast */
   transition: filter 0.3s ease;           /* Smooth transition for interactive effect */
 }
-
+filter: brightness(0) contrast(0); 
 .logo .tagline {
   margin-left: 10px;
   color: var(--primary-color);
@@ -210,7 +210,7 @@ html, body {
 }
 
 .footer-column h4 {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   margin-bottom: 15px;
   color: #f3efe8;text-align: left;
 }
@@ -279,7 +279,6 @@ html, body {
   /*thin horizontal line*/
   .white-line {
   border: none;
-  h
   background-color: white;
   width: 70px;
   margin: 40px 0;
@@ -349,157 +348,115 @@ html, body {
     flex: 1 1 100%;
   }
 }
-.case-study {
+  /*SECTION WITH MULTIPLE SLIDES*/
+ /* TWO‐COLUMN LAYOUT */
+.content {
   display: flex;
-  align-items: center;
-  padding: 80px 20px;
-  gap: 40px;
+  max-width: 1200px;
   min-height: 100vh;
-  background: #cad8cc;
-}
-.case-text {
-  flex: 1 1 50%; font-family:Tempus Sans ITC ; color:#12550f; text-align: justify;
-}
-.case-text h2 {
-  font-size: 4.5rem;
-  margin-bottom: 20px;
-  color:#12550f;
-  font-family:Tempus Sans ITC;
-}
-.case-text .highlight {
-  font-size: 2.0rem;
-  line-height: 1.5;
-  color:#12550f;
-  margin-bottom: 16px;
-  font-family:Microsoft YaHei;
-}
-.case-text .subtext {
-  font-size: 1rem;
-  color:#12550f;
-  margin-bottom: 24px;
-  font-family:Microsoft YaHei;
-}
-.drag-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background:#bcf045;
-  color:#12550f;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: grab;
-  transition: background 0.3s;
-}
-.drag-btn:hover {
-  background:#12550f; color:#bcf045;
-}
-.drag-btn:active {
-  cursor: grabbing;
-}
-.drag-btn .arrows {
-  display: inline-block;
-  font-size: 1.2em;
+  margin: 0 auto;
 }
 
-/* Media on right */
-.case-media {
-  flex: 1 1 50%;
-  height:60px;
-}
-
-/*After image page*/
-.impact-section {
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 100vh;
-  padding: 20px;
-  
-  align-items: center;
-}
-
-.impact-left
- {
+/* LEFT PANEL */
+.content-text {
   flex: 1;
-  padding: 150px;
-  min-width: 300px;
+  padding: 40px;
+  margin-top: 90px;
 }
-.impact-right {
+.content-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family:  BlinkMacSystemFont ; color:#687233;
+}
+.content-text p {
+  max-width: 500px;
+  font-size: 1.5rem;
+  color:#39231a;
+  text-align:left;
+}
+
+/* RIGHT PANEL */
+.content-image {
   flex: 1;
-  padding: 50px;
-  min-width: 300px;
+  position: relative;
+}
+.program-list {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 100%;
+  transform: translateY(-50%);
 }
 
-.impact-left {
-  height: 30rem;
-  background:#bcf045;
-  color:#12550f;
-  text-align: center;
-  border-radius: 0px;
+/* THE “STAIR-STEP” BARS */
+.program-item {
+  --indent: 0px;               /* default */
+  position: relative;
+  margin-bottom: 8px;
+  margin-left: var(--indent);
+  padding: 25px 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  /* remove rounding if you want sharp rectangles */
+  /* border-radius: 0; */
 }
 
-.impact-left h2 {
- 
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+/* ICON OUTSIDE BAR */
+.program-item i {
+  position: absolute;
+  top: 50%;
+  left: calc(-1 * var(--indent) - 40px);
+  transform: translateY(-50%);
+  font-size: 1.75rem;
+  color: inherit;
 }
 
-.impact-left h1 {
-  font-size: 3rem;
-  margin: 10px 0;
-   text-align: center
+/* LABEL TEXT */
+.program-item .label {
+  margin-left: 20px;
 }
 
-.impact-left p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+/* INDENT STEP FOR EACH ITEM */
+.program-item:nth-child(1) { --indent: 0px;   }
+.program-item:nth-child(2) { --indent: 100px;  }
+.program-item:nth-child(3) { --indent: 150px;  }
+.program-item:nth-child(4) { --indent: 250px;  }
+.program-item:nth-child(5) { --indent: 150px; }
+.program-item:nth-child(6) { --indent: 100px; }
+.program-item:nth-child(7) { --indent: 0px; }
+
+/* BAR COLORS */
+.feeding      { background:#377a4a }  /* Feeding Programme */
+.water        { background: #558ca6; }  /* Water Supply Solutions */
+.women        { background: #39231a; }  /* Women Empowerment */
+.education    { background: #e09a29; }  /* Education */
+.vocational   { background: #1d8a70; }  /* Vocational Training */
+.agricultural { background: #377a4a; }  /* Agricultural Sustainability */
+.health       { background:#12550f; }  /* Health Care */
+
+/* MOBILE: STACK EVERYTHING */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  .program-list {
+    position: static;
+    transform: none;
+    padding: 20px 0;
+  }
+  .program-item {
+    margin-left: 0;
+  }
+  .program-item i {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-right: 12px;
+  }
 }
 
-.btn-dark {
-  padding: 10px 20px;
-  background: #fff;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  transition: background 0.3s;
-}
-
-.btn-dark:hover {
-  background: #ddd;
-}
-
-.impact-right h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.impact-right p {
-  margin-bottom: 15px;
-  font-size: 1.05rem;
-  color: #444;
-}
-
-.impact-right .small {
-  color: #777;
-  font-size: 0.95rem;
-}
-
-.btn-yellow {
-  padding: 10px 20px;
-  background: #f4c430;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
-}
-
-.btn-yellow:hover {
-  transform: translateY(-3px);
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -507,18 +464,24 @@ html, body {
     flex-direction: column;
     padding: 20px;
   }
-
+}
   .impact-left, .impact-right {
     text-align: center;
     padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+  .program-item {
+    font-size: 1.25rem;
+    padding: 10px 15px;
+    max-width: 90%;           /* give a little breathing room */
+    min-height: 50px;
   }
 
   .impact-right {
     margin-top: 30px;
   }
 }
-
-
 
 /* Responsive font scaling */
 @media (max-width: 600px) {
@@ -530,15 +493,7 @@ html, body {
   }
 }
 /* Responsive */
-@media (max-width: 768px) {
-  .case-study {
-    flex-direction: column;
-    text-align: center;
-  }
-  .case-text, .case-media { flex: 1 2 100%; }
-  .case-text h2 { font-size: 2rem; }
-  .drag-btn { margin: 0 auto; }
-}
+
 
 @media (max-width: 480px) {
   .hero-content h1 {
