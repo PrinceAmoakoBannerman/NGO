@@ -393,15 +393,14 @@ filter: brightness(0) contrast(0);
 
 /* THE “STAIR-STEP” BARS */
 .program-item {
-  --indent: 0px;               /* default */
+  --indent: 0px;              
   position: relative;
   margin-bottom: 8px;
   margin-left: var(--indent);
-  padding: 25px 10px;
+  padding: 25px 20px;
   color: #fff;
   font-size: 1.5rem;
-  /* remove rounding if you want sharp rectangles */
-  /* border-radius: 0; */
+
 }
 
 /* ICON OUTSIDE BAR */
