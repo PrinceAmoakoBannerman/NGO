@@ -354,14 +354,14 @@ filter: brightness(0) contrast(0);
   display: flex;
   max-width: 1200px;
   min-height: 100vh;
-  margin: 10px auto;
+  margin: 40px auto;
 }
 
 /* LEFT PANEL */
 .content-text {
   flex: 1;
-  padding: 40px;
-  margin-top: 90px;
+  padding: 10px;
+  margin-top: 110px;
 }
 .content-text h1 {
   font-size: 2.5rem;
@@ -369,10 +369,11 @@ filter: brightness(0) contrast(0);
   font-family:  BlinkMacSystemFont ; color:#687233;
 }
 .content-text p {
-  max-width: 500px;
+  max-width: 600px;
   font-size: 1.5rem;
   color:#39231a;
-  text-align:left;
+  text-align:start; 
+  
 }
 
 /* RIGHT PANEL */
@@ -414,7 +415,7 @@ filter: brightness(0) contrast(0);
 
 /* LABEL TEXT */
 .program-item .label {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 /* INDENT STEP FOR EACH ITEM */
@@ -446,7 +447,7 @@ filter: brightness(0) contrast(0);
     padding: 20px 0;
   }
   .program-item {
-    margin-left: 0;
+    margin-left: 10;
   }
   .program-item i {
     position: relative;
@@ -455,6 +456,10 @@ filter: brightness(0) contrast(0);
     transform: none;
     margin-right: 12px;
   }
+
+  .content-text{
+    margin-top: 10px;
+  }
 }
 
 
@@ -462,12 +467,12 @@ filter: brightness(0) contrast(0);
 @media (max-width: 768px) {
   .impact-section {
     flex-direction: column;
-    padding: 20px;
+    padding: 100px;
   }
 }
   .impact-left, .impact-right {
     text-align: center;
-    padding: 20px;
+    padding: 40px;
   }
 
   @media (max-width: 480px) {
