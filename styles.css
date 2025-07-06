@@ -460,6 +460,11 @@ filter: brightness(0) contrast(0);
   .content-text{
     margin-top: 10px;
   }
+  .content-text p {
+    text-align: justify;
+    max-width: 100%;
+  }
+
 }
 
 
