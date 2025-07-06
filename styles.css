@@ -354,7 +354,7 @@ filter: brightness(0) contrast(0);
   display: flex;
   max-width: 1200px;
   min-height: 100vh;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 /* LEFT PANEL */
