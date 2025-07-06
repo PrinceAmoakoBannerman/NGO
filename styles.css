@@ -354,7 +354,7 @@ filter: brightness(0) contrast(0);
   display: flex;
   max-width: 1200px;
   min-height: 100vh;
-  margin: 40px auto;
+  margin: 10px auto;
 }
 
 /* LEFT PANEL */
@@ -385,9 +385,10 @@ filter: brightness(0) contrast(0);
   list-style: none;
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -50;
   width: 100%;
   transform: translateY(-50%);
+  margin-right: 0;
 }
 
 /* THE “STAIR-STEP” BARS */
