@@ -405,12 +405,12 @@ filter: brightness(0) contrast(0);
 
 /* ICON OUTSIDE BAR */
 .program-item i {
-  position: absolute;
+ 
   top: 50%;
-  left: calc(-1 * var(--indent) - 40px);
+  left: 300px;
   transform: translateY(-50%);
-  font-size: 1.75rem;
-  color: inherit;
+  font-size: 1.5rem;
+  color:#f1efe8;
 }
 
 /* LABEL TEXT */
