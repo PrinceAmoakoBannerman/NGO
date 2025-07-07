@@ -466,6 +466,7 @@ filter: brightness(0) contrast(0);
   }
 
 }
+ 
 
 
 /* Responsive */
@@ -484,8 +485,7 @@ filter: brightness(0) contrast(0);
   .program-item {
     font-size: 1.25rem;
     padding: 10px 15px;
-    max-width: 90%;           /* give a little breathing room */
-    min-height: 50px;
+    max-width: 100%;          
   }
 
   .impact-right {
