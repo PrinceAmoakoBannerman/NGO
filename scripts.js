@@ -55,6 +55,58 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// GALLERY 
+  const track = document.querySelector('.carousel-track');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+
+  // Arrow‐button scrolling
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: track.clientWidth * 0.8 + 16, behavior: 'smooth' });
+  });
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -(track.clientWidth * 0.8 + 16), behavior: 'smooth' });
+  });
+
+  // Dragging behavior
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => {
+    isDown = true;
+    track.classList.add('dragging');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  track.addEventListener('mouseup', () => {
+    isDown = false;
+    track.classList.remove('dragging');
+  });
+  track.addEventListener('mouseleave', () => {
+    isDown = false;
+    track.classList.remove('dragging');
+  });
+  track.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5; // scroll-fast factor
+    track.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch support
+  track.addEventListener('touchstart', e => {
+    isDown = true;
+    startX = e.touches[0].pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  track.addEventListener('touchend', () => isDown = false);
+  track.addEventListener('touchmove', e => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    track.scrollLeft = scrollLeft - walk;
+  });
+
+
 
 
 
