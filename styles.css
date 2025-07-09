@@ -463,10 +463,10 @@ filter: brightness(0) contrast(0);
     margin-top: 10px;
   }
   .content-text p {
-    text-align: normal;
+    text-align: 100%;
     max-width: 100%;
     
-    font-size:17px;
+    font-size:150%;
   }
 
 }
