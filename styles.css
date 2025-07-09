@@ -273,7 +273,9 @@ filter: brightness(0) contrast(0);
     align-items: relative;
     text-align: left;
   }
-
+   .footer-column{
+    margin-left: -20px;
+   }
 
   .newsletter-form input,
   .newsletter-form button {
