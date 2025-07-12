@@ -534,3 +534,26 @@ html, body {
 .about-us-section i {
   margin-bottom: 10px;
 }
+
+
+  /* ...existing styles... */
+  .gallery-swiper .swiper-pagination {
+    position: absolute;
+    bottom: 25x;         /* Move dots lower */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+  }
+  .gallery-swiper .swiper-pagination-bullet {
+    width: 10px;          /* Smaller dots */
+    height: 10px;
+    background: #4a90e2;  /* Blue color */
+    opacity: 1;
+    margin: 0 4px !important;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .gallery-swiper .swiper-pagination-bullet-active {
+    background: #12550f;  /* Active dot green */
+    transform: scale(1.2);
+  }
