@@ -37,7 +37,7 @@ html, body {
    /* Increase brightness and contrast */
   transition: filter 0.3s ease;           /* Smooth transition for interactive effect */
 }
-filter: brightness(0) contrast(0); 
+/* Removed invalid filter property */
 .logo .tagline {
   margin-left: 10px;
   color: var(--primary-color);
@@ -522,3 +522,15 @@ filter: brightness(0) contrast(0);
   }
   
   }
+
+  /* About Us Section Custom Styling */
+.about-us-section .p-3 {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.about-us-section .p-3:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.about-us-section i {
+  margin-bottom: 10px;
+}
