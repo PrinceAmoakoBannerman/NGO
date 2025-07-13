@@ -8,15 +8,15 @@
     <style>
         .signup-logo {
             display: block;
-            margin: 40px auto 10px auto;
+            margin: 40px auto 20px auto;
             max-width: 180px;
             width: 40%;
         }
         .signup-title {
             text-align: center;
             color: #12550f;
-            font-size: 1.3rem;
-            margin-bottom: 18px;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
             font-weight: bold;
         }
         .signup-form-container {
@@ -27,11 +27,6 @@
             border-radius: 1.2rem;
             box-shadow: 0 2px 16px rgba(18,85,15,0.07);
         }
-        .signup-form-container h2 {
-            text-align: center;
-            color: #12550f;
-            margin-bottom: 24px;
-        }
         .signup-form-container input,
         .signup-form-container select,
         .signup-form-container textarea {
@@ -40,15 +35,18 @@
             margin-bottom: 16px;
             border-radius: 6px;
             border: 1px solid #d0dd94;
+            font-size: 1rem;
         }
         .signup-form-container button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background: #12550f;
             color: #fff;
             border: none;
             border-radius: 6px;
             font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 10px;
         }
         .signup-form-container a {
             display: block;
@@ -57,8 +55,33 @@
             color: #4ab78e;
             text-decoration: none;
         }
-        .required {
+        .error-message {
             color: #b74a4a;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .signup-form-container {
+                max-width: 98vw !important;
+                width: 98vw !important;
+                padding: 32px 10px !important;
+                font-size: 1.2rem !important;
+            }
+            .signup-form-container input,
+            .signup-form-container select,
+            .signup-form-container textarea,
+            .signup-form-container button {
+                font-size: 1.1rem !important;
+                padding: 14px !important;
+            }
+            .signup-logo {
+                max-width: 120px;
+                width: 60vw;
+            }
+            .signup-title {
+                font-size: 1.3rem !important;
+            }
         }
     </style>
 </head>
@@ -84,4 +107,7 @@
             <textarea name="comments" placeholder="Additional Comments" rows="3"></textarea>
             <button type="submit">Sign Up</button>
         </form>
-        <a href=
+        <a href="{% url 'signin' %}">Already have an account? Sign in</a>
+    </div>
+</body>
+</html>

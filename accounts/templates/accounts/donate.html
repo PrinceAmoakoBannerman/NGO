@@ -6,94 +6,45 @@
   <title>Donate - Iman Jibril Foundation</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <style>
-    body {
-      background: #e2b84a;
-      font-family: 'Patrick Hand', Arial, sans-serif;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    .donate-header {
-      text-align: center;
-      padding: 48px 0 24px 0;
-    }
-    .donate-logo {
-      max-width: 160px;
-      margin-bottom: 16px;
-    }
-    .donate-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-    .donate-subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 24px;
-      color: #fffbe6;
-    }
+    <style>
+  /* ...existing styles... */
+
+  @media (max-width: 600px) {
     .donate-card-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px;
-      margin-bottom: 40px;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
     }
     .donate-card {
-      background: #fffbe6;
-      color: #12550f;
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 16px rgba(18,85,15,0.07);
-      width: 320px;
-      padding: 32px 24px;
-      text-align: center;
-      margin-bottom: 16px;
+      width: 98vw !important;
+      max-width: 98vw !important;
+      padding: 32px !important;
+      font-size: 1.2rem !important;
+      min-height: 320px;
+      margin-bottom: 20px;
     }
     .donate-card img {
-      width: 100%;
-      max-height: 160px;
-      object-fit: cover;
-      border-radius: 1rem;
-      margin-bottom: 18px;
+      max-height: 180px;
     }
-    .donate-card .donate-desc {
-      font-size: 1.1rem;
-      margin-bottom: 18px;
-    }
-    .donate-card .donate-amount {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-    .donate-card input[type="number"] {
-      width: 60px;
-      padding: 6px;
-      border-radius: 6px;
-      border: 1px solid #d0dd94;
-      margin: 0 8px;
-      text-align: center;
-    }
-    .donate-card .donate-btn {
-      background: #12550f;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 10px 24px;
-      font-weight: bold;
-      margin-top: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .donate-card .donate-btn:hover {
-      background: #4ab78e;
+    .donate-desc,
+    .donate-amount {
+      font-size: 1.15rem !important;
     }
     .donate-info {
-      text-align: center;
-      margin: 32px auto;
-      max-width: 700px;
-      color: #fffbe6;
-      font-size: 1.1rem;
+      font-size: 1.15rem !important;
+      padding: 12px;
     }
+    .donate-card input[type="number"] {
+      width: 70px;
+      font-size: 1.1rem;
+      padding: 8px;
+    }
+    .donate-card .donate-btn {
+      font-size: 1.1rem;
+      padding: 14px 28px;
+    }
+  }
+</style>
   </style>
 </head>
 <body>
