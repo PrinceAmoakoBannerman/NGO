@@ -5,80 +5,10 @@
     <meta charset="UTF-8">
     <title>Sign In - IMAN NGO</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
-<style>
-    .signin-logo {
-        display: block;
-        margin: 40px auto 20px auto;
-        max-width: 180px;
-        width: 40%;
-    }
-    .signin-form-container {
-        max-width: 400px;
-        margin: 0 auto;
-        background: #f9fafb;
-        padding: 32px 24px;
-        border-radius: 1.2rem;
-        box-shadow: 0 2px 16px rgba(18,85,15,0.07);
-    }
-    .signin-form-container h2 {
-        text-align: center;
-        color: #12550f;
-        margin-bottom: 24px;
-    }
-    .signin-form-container input {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 16px;
-        border-radius: 6px;
-        border: 1px solid #d0dd94;
-    }
-    .signin-form-container button {
-        width: 100%;
-        padding: 10px;
-        background: #12550f;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        font-weight: bold;
-    }
-    .signin-form-container a {
-        display: block;
-        text-align: center;
-        margin-top: 18px;
-        color: #4ab78e;
-        text-decoration: none;
-    }
-    .error-message {
-        color: #b74a4a;
-        text-align: center;
-        margin-bottom: 16px;
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-        .signin-form-container {
-            max-width: 98vw !important;
-            width: 98vw !important;
-            padding: 32px 10px !important;
-            font-size: 1.2rem !important;
-        }
-        .signin-form-container input,
-        .signin-form-container button {
-            font-size: 1.1rem !important;
-            padding: 14px !important;
-        }
-        .signin-logo {
-            max-width: 120px;
-            width: 60vw;
-        }
-    }
-</style>
-
 </head>
 <body>
     <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="signin-logo">
-    <div class="signin-form-container">
+    <div class="signin-form-container login-container">
         <h2>Sign In</h2>
         {% if error %}
             <div class="error-message">{{ error }}</div>

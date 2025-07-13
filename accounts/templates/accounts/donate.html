@@ -5,47 +5,6 @@
   <meta charset="UTF-8">
   <title>Donate - Iman Jibril Foundation</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <style>
-    <style>
-  /* ...existing styles... */
-
-  @media (max-width: 600px) {
-    .donate-card-list {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    .donate-card {
-      width: 98vw !important;
-      max-width: 98vw !important;
-      padding: 32px !important;
-      font-size: 1.2rem !important;
-      min-height: 320px;
-      margin-bottom: 20px;
-    }
-    .donate-card img {
-      max-height: 180px;
-    }
-    .donate-desc,
-    .donate-amount {
-      font-size: 1.15rem !important;
-    }
-    .donate-info {
-      font-size: 1.15rem !important;
-      padding: 12px;
-    }
-    .donate-card input[type="number"] {
-      width: 70px;
-      font-size: 1.1rem;
-      padding: 8px;
-    }
-    .donate-card .donate-btn {
-      font-size: 1.1rem;
-      padding: 14px 28px;
-    }
-  }
-</style>
-  </style>
 </head>
 <body>
   <div class="donate-header">
@@ -53,7 +12,7 @@
     <div class="donate-title">Give Confidently</div>
     <div class="donate-subtitle">Support our mission to transform lives across Africa</div>
   </div>
-  <div class="donate-card-list">
+  <div class="donate-card-list" style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
     <div class="donate-card">
       <img src="{% static 'images/IMG9.jpg' %}" alt="Feed a child">
       <div class="donate-desc">Feed a child for a school year</div>
