@@ -28,7 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '7a85220d-a216-4ab6-af88-962fc6d6c96a-00-z3k1p9b8dfsv.spock.replit.dev',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1', 'onrender.com'
 ]
 
 
@@ -123,6 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Default primary key field type
