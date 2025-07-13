@@ -620,3 +620,32 @@ html, body {
     max-width: 95vw;
   }
 }
+
+/* Responsive form and card containers */
+@media (max-width: 600px) {
+  .login-container,
+  .signup-container,
+  .donate-card,
+  form {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    min-width: 0 !important;
+    margin: 10px auto !important;
+    padding: 16px !important;
+    box-sizing: border-box;
+  }
+  input, button {
+    font-size: 1rem !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* Make donate page text larger on mobile */
+@media (max-width: 600px) {
+  .donate-desc,
+  .donate-amount,
+  .donate-info {
+    font-size: 1.1rem !important;
+  }
+}

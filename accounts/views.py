@@ -32,3 +32,4 @@ def signout_view(request):
 
 def donate_view(request):
     return render(request, 'accounts/donate.html')
+
