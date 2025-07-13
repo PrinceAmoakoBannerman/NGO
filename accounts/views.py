@@ -29,3 +29,6 @@ def signin_view(request):
 def signout_view(request):
     logout(request)
     return redirect('signin')
+
+def donate_view(request):
+    return render(request, 'accounts/donate.html')

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donate - Iman Jibril Foundation</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    body {
+      background: #e2b84a;
+      font-family: 'Patrick Hand', Arial, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .donate-header {
+      text-align: center;
+      padding: 48px 0 24px 0;
+    }
+    .donate-logo {
+      max-width: 160px;
+      margin-bottom: 16px;
+    }
+    .donate-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .donate-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      color: #fffbe6;
+    }
+    .donate-card-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .donate-card {
+      background: #fffbe6;
+      color: #12550f;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+      width: 320px;
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .donate-card img {
+      width: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 1rem;
+      margin-bottom: 18px;
+    }
+    .donate-card .donate-desc {
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+    }
+    .donate-card .donate-amount {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .donate-card input[type="number"] {
+      width: 60px;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #d0dd94;
+      margin: 0 8px;
+      text-align: center;
+    }
+    .donate-card .donate-btn {
+      background: #12550f;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 24px;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .donate-card .donate-btn:hover {
+      background: #4ab78e;
+    }
+    .donate-info {
+      text-align: center;
+      margin: 32px auto;
+      max-width: 700px;
+      color: #fffbe6;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="donate-header">
+    <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="donate-logo">
+    <div class="donate-title">Give Confidently</div>
+    <div class="donate-subtitle">Support our mission to transform lives across Africa</div>
+  </div>
+  <div class="donate-card-list">
+    <div class="donate-card">
+      <img src="{% static 'images/IMG9.jpg' %}" alt="Feed a child">
+      <div class="donate-desc">Feed a child for a school year</div>
+      <div class="donate-amount">US$ 15 X <input type="number" min="1" value="1"> = US$ 15</div>
+      <button class="donate-btn">Donate</button>
+    </div>
+    <div class="donate-card">
+      <img src="{% static 'images/IMG7.jpg' %}" alt="Sponsor meals">
+      <div class="donate-desc">Sponsor 100 meals on your special day</div>
+      <div class="donate-amount">US$ 8 X <input type="number" min="1" value="1"> = US$ 8</div>
+      <button class="donate-btn">Donate</button>
+    </div>
+    <div class="donate-card">
+      <img src="{% static 'images/img4.jpg' %}" alt="Build classroom">
+      <div class="donate-desc">Help build a new classroom</div>
+      <div class="donate-amount">US$ 3,022 X <input type="number" min="1" value="1"> = US$ 3,022</div>
+      <button class="donate-btn">Donate</button>
+    </div>
+  </div>
+  <div class="donate-info">
+    Iman Jibril Foundation is accredited and your donation goes directly to supporting children, families, and communities in need. Every contribution makes a real difference!
+  </div>
+</body>
+</html>
