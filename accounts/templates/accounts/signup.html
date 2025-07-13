@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - IMAN NGO</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .signup-logo {
+            display: block;
+            margin: 40px auto 10px auto;
+            max-width: 180px;
+            width: 40%;
+        }
+        .signup-title {
+            text-align: center;
+            color: #12550f;
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+        .signup-form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #f9fafb;
+            padding: 32px 24px;
+            border-radius: 1.2rem;
+            box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+        }
+        .signup-form-container h2 {
+            text-align: center;
+            color: #12550f;
+            margin-bottom: 24px;
+        }
+        .signup-form-container input,
+        .signup-form-container select,
+        .signup-form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            border: 1px solid #d0dd94;
+        }
+        .signup-form-container button {
+            width: 100%;
+            padding: 10px;
+            background: #12550f;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .signup-form-container a {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            color: #4ab78e;
+            text-decoration: none;
+        }
+        .required {
+            color: #b74a4a;
+        }
+    </style>
+</head>
+<body>
+    <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="signup-logo">
+    <div class="signup-title">Sign up to volunteer</div>
+    <div class="signup-form-container">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="first_name" placeholder="First Name *" required>
+            <input type="text" name="last_name" placeholder="Last Name *" required>
+            <select name="gender" required>
+                <option value="">Gender *</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="number" name="age" placeholder="Age *" min="1" required>
+            <input type="text" name="country_code" placeholder="Int'l Calling code (e.g. US 1, UK 44) *" required>
+            <input type="text" name="mobile" placeholder="Mobile Number *" required>
+            <input type="email" name="email" placeholder="Email *" required>
+            <input type="text" name="availability" placeholder="Availability *" required>
+            <textarea name="comments" placeholder="Additional Comments" rows="3"></textarea>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href=
