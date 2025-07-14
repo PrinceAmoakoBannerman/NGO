@@ -6,7 +6,63 @@
   <title>Donate - Iman Jibril Foundation</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <style>
-    /* Responsive donate cards and info */
+    .donate-card-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    .donate-card {
+      flex: 1 1 300px;
+      max-width: 350px;
+      min-width: 220px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 24px;
+      font-size: 1rem;
+    }
+    .donate-card img {
+      max-width: 100%;
+      max-height: 180px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .donate-desc,
+    .donate-amount,
+    .donate-info {
+      font-size: 1.15rem;
+      padding: 12px 0;
+    }
+    .donate-card input[type="number"] {
+      width: 70px;
+      font-size: 1.1rem;
+      padding: 8px;
+    }
+    .donate-card .donate-btn {
+      font-size: 1.1rem;
+      padding: 14px 28px;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+      background: #12550f;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .donate-info {
+      width: 95vw;
+      margin: 0 auto;
+      margin-top: 20px;
+      background: #f9fafb;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 16px;
+      text-align: center;
+    }
     @media (max-width: 600px) {
       .donate-card-list {
         flex-direction: column;
@@ -19,42 +75,10 @@
         padding: 32px !important;
         font-size: 1.2rem !important;
         min-height: 320px;
-        margin-bottom: 20px;
-        border-radius: 12px;
-        background: #fff;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
       }
-      .donate-card img {
-        max-width: 100%;
-        max-height: 180px;
-        height: auto;
-        border-radius: 8px;
-        margin-bottom: 12px;
-      }
-      .donate-desc,
-      .donate-amount,
       .donate-info {
+        width: 98vw !important;
         font-size: 1.15rem !important;
-        padding: 12px;
-      }
-      .donate-card input[type="number"] {
-        width: 70px;
-        font-size: 1.1rem;
-        padding: 8px;
-      }
-      .donate-card .donate-btn {
-        font-size: 1.1rem;
-        padding: 14px 28px;
-        width: 100%;
-        margin-top: 10px;
-      }
-      .donate-info {
-        width: 95vw;
-        margin: 0 auto;
-        margin-top: 20px;
-        background: #f9fafb;
-        border-radius: 10px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
       }
     }
   </style>
@@ -65,7 +89,7 @@
     <div class="donate-title">Give Confidently</div>
     <div class="donate-subtitle">Support our mission to transform lives across Africa</div>
   </div>
-  <div class="donate-card-list" style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+  <div class="donate-card-list">
     <div class="donate-card">
       <img src="{% static 'images/IMG9.jpg' %}" alt="Feed a child">
       <div class="donate-desc">Feed a child for a school year</div>
