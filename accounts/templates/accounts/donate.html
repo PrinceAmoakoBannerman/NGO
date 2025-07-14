@@ -6,11 +6,36 @@
   <title>Donate - Iman Jibril Foundation</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <style>
+    body {
+      background: #faf7e3;
+    }
+    .donate-logo {
+      display: block;
+      margin: 40px auto 10px auto;
+      max-width: 220px;
+      width: 40%;
+    }
+    .donate-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .donate-title {
+      font-size: 2rem;
+      color: #12550f;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .donate-subtitle {
+      font-size: 1.1rem;
+      color: #39231a;
+      margin-bottom: 24px;
+    }
     .donate-card-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 32px;
       justify-content: center;
+      margin-bottom: 30px;
     }
     .donate-card {
       flex: 1 1 300px;
@@ -19,10 +44,11 @@
       box-sizing: border-box;
       margin-bottom: 20px;
       border-radius: 12px;
-      background: #fff;
+      background: #f9fafb;
       box-shadow: 0 2px 12px rgba(0,0,0,0.07);
       padding: 24px;
       font-size: 1rem;
+      text-align: center;
     }
     .donate-card img {
       max-width: 100%;
@@ -31,18 +57,34 @@
       border-radius: 8px;
       margin-bottom: 12px;
     }
-    .donate-desc,
-    .donate-amount,
-    .donate-info {
+    .donate-desc {
       font-size: 1.15rem;
+      margin-bottom: 16px;
+      color: #39231a;
+      font-family: 'Patrick Hand', cursive, Arial, sans-serif;
+    }
+    .donate-amount {
+      background: #f6f3e6;
+      border-radius: 30px;
       padding: 12px 0;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      color: #12550f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
     .donate-card input[type="number"] {
-      width: 70px;
+      width: 50px;
       font-size: 1.1rem;
-      padding: 8px;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #d0dd94;
+      text-align: center;
+      margin: 0 8px;
     }
-    .donate-card .donate-btn {
+    .donate-btn {
       font-size: 1.1rem;
       padding: 14px 28px;
       width: 100%;
@@ -52,6 +94,7 @@
       color: #fff;
       border: none;
       cursor: pointer;
+      font-weight: bold;
     }
     .donate-info {
       width: 95vw;
@@ -62,6 +105,16 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.07);
       padding: 16px;
       text-align: center;
+      font-size: 1.15rem;
+      color: #39231a;
+    }
+    @media (max-width: 900px) {
+      .donate-card-list {
+        gap: 16px;
+      }
+      .donate-card {
+        max-width: 95vw;
+      }
     }
     @media (max-width: 600px) {
       .donate-card-list {
@@ -72,13 +125,17 @@
       .donate-card {
         width: 98vw !important;
         max-width: 98vw !important;
-        padding: 32px !important;
+        padding: 32px 10px !important;
         font-size: 1.2rem !important;
         min-height: 320px;
       }
       .donate-info {
         width: 98vw !important;
         font-size: 1.15rem !important;
+      }
+      .donate-logo {
+        max-width: 120px;
+        width: 60vw;
       }
     }
   </style>
@@ -98,7 +155,7 @@
     </div>
     <div class="donate-card">
       <img src="{% static 'images/IMG7.jpg' %}" alt="Sponsor meals">
-      <div class="donate-desc">Sponsor 100 meals on your special day</div>
+      <div class="donate-desc">On your special day (i.e. birthday, anniversary) sponsor at least 100 meals for the day (example: $8 = 100 meals, $16 = 200 meals, $80 = 1000)</div>
       <div class="donate-amount">US$ 8 X <input type="number" min="1" value="1"> = US$ 8</div>
       <button class="donate-btn">Donate</button>
     </div>
