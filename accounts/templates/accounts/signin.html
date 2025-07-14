@@ -7,72 +7,63 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     
 <style>
-    .signin-logo {
-        display: block;
-        margin: 40px auto 20px auto;
-        max-width: 180px;
-        width: 40%;
-    }
-    .signin-form-container {
-        max-width: 400px;
-        margin: 0 auto;
-        background: #f9fafb;
-        padding: 32px 24px;
-        border-radius: 1.2rem;
-        box-shadow: 0 2px 16px rgba(18,85,15,0.07);
-    }
-    .signin-form-container h2 {
-        text-align: center;
-        color: #12550f;
-        margin-bottom: 24px;
-    }
-    .signin-form-container input {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 16px;
-        border-radius: 6px;
-        border: 1px solid #d0dd94;
-    }
-    .signin-form-container button {
-        width: 100%;
-        padding: 10px;
-        background: #12550f;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        font-weight: bold;
-    }
-    .signin-form-container a {
-        display: block;
-        text-align: center;
-        margin-top: 18px;
-        color: #4ab78e;
-        text-decoration: none;
-    }
-    .error-message {
-        color: #b74a4a;
-        text-align: center;
-        margin-bottom: 16px;
-    }
 
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-        .signin-form-container {
-            max-width: 98vw !important;
-            width: 98vw !important;
-            padding: 32px 10px !important;
-            font-size: 1.2rem !important;
-        }
-        .signin-form-container input,
-        .signin-form-container button {
-            font-size: 1.1rem !important;
-            padding: 14px !important;
-        }
-        .signin-logo {
-            max-width: 120px;
-            width: 60vw;
-        }
-    }
+@media (max-width: 600px) {
+  .signin-form-container,
+  .signup-form-container,
+  .donate-card {
+    max-width: 98vw !important;
+    width: 98vw !important;
+    padding: 32px 10px !important;
+    font-size: 1.2rem !important;
+    min-height: 320px;
+    margin: 24px auto !important;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+    background: #fff;
+  }
+  .signin-form-container input,
+  .signup-form-container input,
+  .signup-form-container select,
+  .signup-form-container textarea,
+  .signin-form-container button,
+  .signup-form-container button,
+  .donate-card input,
+  .donate-card button {
+    font-size: 1.1rem !important;
+    padding: 16px !important;
+    width: 100% !important;
+    margin-bottom: 18px !important;
+    border-radius: 8px;
+    border: 1px solid #d0dd94;
+    box-sizing: border-box;
+  }
+  .donate-card-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .donate-info {
+    width: 98vw !important;
+    font-size: 1.15rem !important;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #f9fafb;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    text-align: center;
+  }
+  .signup-logo,
+  .signin-logo,
+  .donate-logo {
+    max-width: 120px;
+    width: 60vw;
+    margin: 32px auto 20px auto;
+    display: block;
+  }
+}
+     
 </style>
 
 </head>
