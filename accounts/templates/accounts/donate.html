@@ -170,10 +170,13 @@
 
 <body>
   <div class="donate-header">
-    <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="donate-logo">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="donate-logo">
+    </a>
     <div class="donate-title">Give Confidently</div>
     <div class="donate-subtitle">Support our mission to transform lives across Africa</div>
   </div>
+  
   <div class="donate-card-list">
     <div class="donate-card">
       <img src="{% static 'images/IMG9.jpg' %}" alt="Feed a child">
