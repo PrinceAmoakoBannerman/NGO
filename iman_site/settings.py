@@ -34,12 +34,14 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles','accounts',
+    'django.contrib.staticfiles',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +131,24 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yourprovider.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'your@email.com'
+EMAIL_HOST_PASSWORD = 'yourpassword'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'your@email.com'
+
+JAZZMIN_SETTINGS = {
+    "site_title": "IMAN Jibril Foundation Admin",
+    "site_header": "IMAN Jibril Foundation",
+    "site_brand": "IMAN Jibril",
+    "welcome_sign": "Welcome to IMAN Jibril Foundation Admin",
+    "copyright": "IMAN Jibril Foundation",
+    "site_logo": "images/imanJ.png",  # Place logo in static/images and use relative path
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "hide_apps": [],
+    "hide_models": [],
+}

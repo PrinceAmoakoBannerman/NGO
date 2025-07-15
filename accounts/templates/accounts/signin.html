@@ -1,7 +1,13 @@
 {% load static %}
+{% if messages %}
+  {% for message in messages %}
+    <div class="hero-message">{{ message }}</div>
+  {% endfor %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Sign In - IMAN NGO</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -73,6 +79,16 @@
             width: 60vw;
         }
     }
+.hero-message {
+  background: #e6f9e6;
+  color: #12550f;
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
 </style>
 
 </head>
@@ -92,6 +108,7 @@
             <button type="submit">Sign In</button>
         </form>
         <a href="{% url 'signup' %}">Don't have an account? Sign Up</a>
+        <a href="{% url 'password_reset' %}">Forgot password?</a>
     </div>
     <script src="{% static 'js/scripts.js' %}"></script>
     </body>

@@ -82,6 +82,34 @@
   }
 }
 
+.volunteer-popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(18,85,15,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.volunteer-popup-box {
+  background: #e6f9e6;
+  border-radius: 16px;
+  box-shadow: 0 2px 24px rgba(18,85,15,0.13);
+  padding: 32px 24px;
+  max-width: 340px;
+  text-align: center;
+  color: #12550f;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.volunteer-popup-box h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  color: #12550f;
+}
+.volunteer-popup-box p {
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
 
   </style>
 </head>
@@ -92,7 +120,7 @@
     </div>
     <div class="nav-buttons" style="display: flex; gap: 12px;">
         {% if user.is_authenticated %}
-            <a href="{% url 'profile' %}" class="btn volunteer">VOLUNTEER</a>
+         <a href="{% url 'volunteer' %}" class="btn volunteer">VOLUNTEER</a>
             <a href="{% url 'profile' %}" class="btn donate">PROFILE</a>
         {% else %}
             <a href="{% url 'signin' %}" class="btn volunteer">VOLUNTEER</a>
@@ -610,5 +638,27 @@
     });
   </script>
   <script src="{% static 'js/scripts.js' %}"></script>
+
+ 
+</div>
+
+<!-- Volunteer Section (Inline, no popup) -->
+<div class="volunteer-section" style="max-width:340px; margin:32px auto; background:#e6f9e6; border-radius:16px; box-shadow:0 2px 24px rgba(18,85,15,0.13); padding:32px 24px; text-align:center; color:#12550f;">
+  <h3>Become a Volunteer</h3>
+  <p>
+    {% if volunteer_message %}
+      {{ volunteer_message }}
+    {% else %}
+      Click below to confirm your interest in volunteering with IMAN Jibril Foundation.
+    {% endif %}
+  </p>
+  {% if not volunteer_message %}
+    <form method="post" action="{% url 'volunteer' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn volunteer" style="width:100%;">Click here to volunteer</button>
+    </form>
+  {% endif %}
+</div>
+
 </body>
 </html>
