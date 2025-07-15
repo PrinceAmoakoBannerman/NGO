@@ -44,6 +44,12 @@ INSTALLED_APPS = [
     'accounts',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost",
+    "http://127.0.0.1",
+    "https://ngo-ehfb.onrender.com",
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -152,3 +158,6 @@ JAZZMIN_SETTINGS = {
     "hide_apps": [],
     "hide_models": [],
 }
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
