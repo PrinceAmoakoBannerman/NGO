@@ -1,3 +1,11 @@
-django
-whitenoise
-gunicorn
+asgiref==3.9.1
+certifi==2025.7.14
+charset-normalizer==3.4.2
+Django==5.2.4
+django-jazzmin @ git+https://github.com/farridav/django-jazzmin.git@d269874c96fe5ff6d231c3017cdd4650bc2f3105
+idna==3.10
+requests==2.32.4
+sqlparse==0.5.3
+tzdata==2025.2
+urllib3==2.5.0
+whitenoise==6.9.0

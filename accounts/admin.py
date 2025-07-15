@@ -6,9 +6,11 @@ from django.contrib.auth.admin import UserAdmin
 
 @admin.register(Volunteer)
 class VolunteerAdmin(admin.ModelAdmin):
-    list_display = ('user', 'status', 'date_joined', 'mobile_number')
+    list_display = ('user', 'mobile_number', 'status', 'date_joined')
     search_fields = ('user__username', 'user__email', 'mobile_number')
     list_filter = ('status',)
+    fields = ('user', 'mobile_number', 'status', 'date_joined')
+    readonly_fields = ('date_joined',)
 
 @admin.register(Donation)
 class DonationAdmin(admin.ModelAdmin):
