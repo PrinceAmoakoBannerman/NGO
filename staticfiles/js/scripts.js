@@ -36,12 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('OUR STORY clicked');
     // e.g. document.querySelector('#story').scrollIntoView({ behavior: 'smooth' });
   });
-  document.querySelector('.volunteer').addEventListener('click', () => {
-    window.location.href = '/volunteer';
-  });
-  document.querySelector('.donate').addEventListener('click', () => {
-    window.location.href = '/donate';
-  });
+ 
 });
 
 document.addEventListener('DOMContentLoaded', () => {

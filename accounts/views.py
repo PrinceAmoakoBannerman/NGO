@@ -32,7 +32,7 @@ def signup_view(request):
         return redirect('profile')  # Redirect to profile after signup
     return render(request, 'accounts/signup.html')
 
-def signin_view(request):
+def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -43,13 +43,13 @@ def signin_view(request):
             return redirect('home')  # Redirect to profile after signin
         else:
             error = "Invalid username or password."
-            return render(request, 'accounts/signin.html', {'error': error})
-    return render(request, 'accounts/signin.html')
+            return render(request, 'accounts/login.html', {'error': error})
+    return render(request, 'accounts/login.html')
 
 def signout_view(request):
     logout(request)
     messages.success(request, "You have been signed out.")
-    return redirect('signin')
+    return redirect('login')
 
 def donate_view(request):
     return render(request, 'accounts/donate.html')

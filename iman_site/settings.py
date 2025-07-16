@@ -161,3 +161,5 @@ JAZZMIN_SETTINGS = {
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+LOGIN_URL = '/login/'
