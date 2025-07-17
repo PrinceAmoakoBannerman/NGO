@@ -496,13 +496,31 @@
       </div>
 
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
+    <div class="program-swiper-button-next swiper-button-next"></div>
+    <div class="program-swiper-button-prev swiper-button-prev"></div>
+    <div class="program-swiper-pagination swiper-pagination"></div>
   </div>
 </section>
 
-
+<!-- Swiper JS for Program Slideshow -->
+<script>
+  var programSwiper = new Swiper('.program-swiper', {
+    loop: true,
+    autoplay: { delay: 5000 },
+    navigation: {
+      nextEl: '.program-swiper-button-next',
+      prevEl: '.program-swiper-button-prev'
+    },
+    pagination: {
+      el: '.program-swiper-pagination',
+      clickable: true
+    },
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    slidesPerView: 1,
+    spaceBetween: 30,
+  });
+</script>
 
   <!-- Where We Serve Section -->
   <section class="container my-5">
