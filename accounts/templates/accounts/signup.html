@@ -10,85 +10,98 @@
     <meta charset="UTF-8">
     <title>Sign Up - IMAN NGO</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+
     <style>
-        .signup-logo {
-            display: block;
-            margin: 40px auto 20px auto;
-            max-width: 180px;
-            width: 40%;
-        }
+    .signup-logo {
+        display: block;
+        margin: 40px auto 20px auto;
+        max-width: 180px;
+        width: 40%;
+    }
+    .signup-form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        background: #f9fafb;
+        padding: 32px 24px;
+        border-radius: 1.2rem;
+        box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+    }
+    .signup-title {
+        text-align: center;
+        color: #12550f;
+        margin-bottom: 24px;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    .signup-form-container input,
+    .signup-form-container select,
+    .signup-form-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border-radius: 6px;
+        border: 1px solid #d0dd94;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+    .signup-form-container button {
+        width: 100%;
+        padding: 10px;
+        background: #12550f;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    .signup-form-container a {
+        display: block;
+        text-align: center;
+        margin-top: 18px;
+        color: #4ab78e;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    .success-message {
+        color: #12550f;
+        background: #e6f9e6;
+        text-align: center;
+        padding: 12px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
         .signup-form-container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: #f9fafb;
-            padding: 32px 24px;
-            border-radius: 1.2rem;
-            box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+            max-width: 98vw;
+            width: 98vw;
+            margin: 24px auto;
+            padding: 18px 6px;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(18,85,15,0.07);
         }
         .signup-title {
-            text-align: center;
-            color: #12550f;
-            margin-bottom: 24px;
-            font-size: 1.4rem;
-            font-weight: bold;
+            font-size: 1.2rem;
         }
         .signup-form-container input,
         .signup-form-container select,
-        .signup-form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 16px;
-            border-radius: 6px;
-            border: 1px solid #d0dd94;
-        }
+        .signup-form-container textarea,
         .signup-form-container button {
-            width: 100%;
-            padding: 10px;
-            background: #12550f;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 14px;
+        }
+        .signup-logo {
+            max-width: 100px;
+            width: 60vw;
+            margin: 24px auto 12px auto;
         }
         .signup-form-container a {
-            display: block;
-            text-align: center;
-            margin-top: 18px;
-            color: #4ab78e;
-            text-decoration: none;
+            font-size: 1.05rem;
         }
-        /* Mobile responsiveness */
-        @media (max-width: 600px) {
-            .signup-form-container {
-                max-width: 98vw !important;
-                width: 98vw !important;
-                padding: 32px 10px !important;
-                font-size: 1.2rem !important;
-            }
-            .signup-form-container input,
-            .signup-form-container select,
-            .signup-form-container textarea,
-            .signup-form-container button {
-                font-size: 1.1rem !important;
-                padding: 14px !important;
-            }
-            .signup-logo {
-                max-width: 120px;
-                width: 60vw;
-            }
-        }
-        .success-message {
-    color: #12550f;
-    background: #e6f9e6;
-    text-align: center;
-    padding: 12px;
-    margin-bottom: 16px;
-    border-radius: 8px;
-    font-weight: bold;
-}
-    </style>
-</head>
-<body>
+    }
+</style>
     
     <a href="{% url 'home' %}">
         <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="signup-logo">
