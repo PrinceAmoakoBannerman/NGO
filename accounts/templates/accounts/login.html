@@ -33,14 +33,14 @@
         margin-bottom: 24px;
     }
     .signin-form-container input {
-        ;
+        width: 100%;
         padding: 10px;
         margin-bottom: 16px;
         border-radius: 6px;
         border: 1px solid #d0dd94;
     }
     .signin-form-container button {
-;
+        width: 100%;
         padding: 10px;
         background: #12550f;
         color: #fff;
@@ -61,30 +61,24 @@
         margin-bottom: 16px;
     }
 
-   @media (max-width: 600px) {
-  .signin-form-container {
-    max-width: 100vw;
-    width: 100vw;
-    margin: 0;
-    padding: 24px 8px;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  .signin-form-container h2 {
-    font-size: 1.5rem;
-  }
-  .signin-form-container input,
-  .signin-form-container button {
-    font-size: 1.1rem;
-    padding: 14px;
-  }
-  .signin-logo {
-    max-width: 100px;
-    width: 60vw;
-    margin: 24px auto 12px auto;
-  }
-}
-
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+        .signin-form-container {
+            max-width: 98vw !important;
+            width: 98vw !important;
+            padding: 32px 10px !important;
+            font-size: 1.2rem !important;
+        }
+        .signin-form-container input,
+        .signin-form-container button {
+            font-size: 1.1rem !important;
+            padding: 14px !important;
+        }
+        .signin-logo {
+            max-width: 120px;
+            width: 60vw;
+        }
+    }
 .hero-message {
   background: #e6f9e6;
   color: #12550f;
