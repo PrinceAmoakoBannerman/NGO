@@ -705,3 +705,132 @@ html, body {
     border-radius: 1rem !important;
   }
 }
+
+
+/* Universal form and card styles */
+.login-form-container,
+.signup-form-container,
+.volunteer-form-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 40px auto;
+  background: #f9fafb;
+  padding: 32px 24px;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+  text-align: center;
+}
+
+.login-form-container h2,
+.signup-form-container h2,
+.volunteer-form-container h2 {
+  text-align: center;
+  color: #12550f;
+  margin-bottom: 24px;
+}
+
+.login-form-container input,
+.signup-form-container input,
+.signup-form-container select,
+.signup-form-container textarea,
+.volunteer-form-container input,
+.volunteer-form-container select,
+.volunteer-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #d0dd94;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.login-form-container button,
+.signup-form-container button,
+.volunteer-form-container button {
+  width: 100%;
+  padding: 10px;
+  background: #12550f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.login-form-container a,
+.signup-form-container a,
+.volunteer-form-container a {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  color: #4ab78e;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.success-message,
+.error-message {
+  font-size: 1.05rem;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Donate cards */
+.donate-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.donate-card {
+  flex: 1 1 300px;
+  max-width: 350px;
+  min-width: 220px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background: #f9fafb;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 24px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.donate-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .login-form-container,
+  .signup-form-container,
+  .volunteer-form-container {
+    max-width: 98vw;
+    width: 98vw;
+    margin: 24px auto;
+    padding: 18px 6px;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(18,85,15,0.07);
+  }
+  .donate-card-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .donate-card {
+    max-width: 95vw;
+    width: 95vw;
+    margin: 0 auto 12px auto;
+    padding: 32px 10px;
+    font-size: 1.2rem;
+    border-radius: 16px;
+    box-sizing: border-box;
+    flex: 1 1 100%;
+  }
+}
