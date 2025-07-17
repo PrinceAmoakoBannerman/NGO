@@ -327,14 +327,27 @@
     </div>
   </section>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper('.gallery-swiper', {
-      loop: true,
-      autoplay: { delay: 4000 },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      pagination: { el: '.swiper-pagination', clickable: true },
-    });
-  </script>
+  
+<script>
+  var swiper = new Swiper('.gallery-swiper', {
+    loop: true,
+    autoplay: { delay: 4000 },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    pagination: { el: '.swiper-pagination', clickable: true },
+  });
+
+  var programSwiper = new Swiper('.program-swiper', {
+    loop: true,
+    autoplay: { delay: 5000 },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    slidesPerView: 1,
+    spaceBetween: 30,
+  });
+</script>
+
 
   <!-- Content Section -->
   <section class="content">
@@ -381,8 +394,115 @@
     </div>
   </section>
 
-  <!-- Highlighted Feature Sections (Feeding, Water, Women, Agriculture, Health) -->
-  <!-- ... (keep your highlighted feature sections as in your code) ... -->
+<!-- Program Features Slideshow -->
+<section class="container my-5">
+  <h2 class="text-center mb-4 pt-4"
+      style="color:#12550f; font-weight:800; letter-spacing:2px; font-size:2.5rem; text-shadow:0 2px 12px #d0dd94, 0 1px 0 #fff;">
+    <i class="fas fa-star me-2" style="color:#4ab78e;"></i>
+    Our Programmes
+  </h2>
+  <div class="swiper program-swiper py-3">
+    <div class="swiper-wrapper">
+
+      <!-- Feeding Programme -->
+      <div class="swiper-slide">
+        <div class="feature-card text-center p-4">
+          <h3 class="fw-bold mb-3" style="color:#12550f;">
+            <i class="fas fa-utensils me-2"></i>Feeding Programme
+          </h3>
+          <img src="{% static 'images/woman.jpg' %}" alt="Feeding Programme" class="img-fluid rounded-4 shadow mb-3" style="max-height:320px;object-fit:cover;">
+          <p style="font-size:1.15rem; color:#3d5c3d;">
+            We provide nutritious meals to children and families in need, ensuring no one goes hungry. Our feeding drives bring hope and health to communities, one meal at a time.
+          </p>
+        </div>
+      </div>
+
+      <!-- Water Supply Solutions -->
+      <div class="swiper-slide">
+        <div class="feature-card text-center p-4">
+          <h3 class="fw-bold mb-3" style="color:#12550f;">
+            <i class="fas fa-water me-2"></i>Water Supply Solutions
+          </h3>
+          <img src="{% static 'images/img2.jpeg' %}" alt="Water Supply Solutions" class="img-fluid rounded-4 shadow mb-3" style="max-height:320px;object-fit:cover;">
+          <p style="font-size:1.15rem; color:#3d5c3d;">
+            Clean water is life. We install boreholes and purification systems, giving communities access to safe drinking water and improving overall health.
+          </p>
+        </div>
+      </div>
+
+      <!-- Women Empowerment -->
+      <div class="swiper-slide">
+        <div class="feature-card text-center p-4">
+          <h3 class="fw-bold mb-3" style="color:#12550f;">
+            <i class="fas fa-ribbon me-2"></i>Women Empowerment
+          </h3>
+          <img src="{% static 'images/img9jpg' %}" alt="Women Empowerment" class="img-fluid rounded-4 shadow mb-3" style="max-height:320px;object-fit:cover;">
+          <p style="font-size:1.15rem; color:#3d5c3d;">
+            We uplift women through education, skills training, and leadership programs, helping them become agents of change in their communities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="swiper-slide">
+        <div class="feature-card text-center p-4">
+          <h3 class="fw-bold mb-3" style="color:#12550f;">
+            <i class="fas fa-sun me-2"></i>Education
+          </h3>
+          <img src="{% static 'images/edu.jpg' %}" alt="Education" class="img-fluid rounded-4 shadow mb-3" style="max-height:320px;object-fit:cover;">
+          <p style="font-size:1.15rem; color:#3d5c3d;">
+            We support schools and provide learning materials, ensuring every child has the opportunity to succeed and build a brighter future.
+          </p>
+        </div>
+      </div>
+
+      <!-- Vocational Training -->
+      <div class="swiper-slide">
+        <div class="feature-card text-center p-4">
+          <h3 class="fw-bold mb-3" style="color:#12550f;">
+            <i class="fas fa-tools me-2"></i>Vocational Training
+          </h3>
+          <img src="{% static 'images/vocational.jpg' %}" alt="Vocational Training" class="img-fluid rounded-4 shadow mb-3" style="max-height:320px;object-fit:cover;">
+          <p style="font-size:1.15rem; color:#3d5c3d;">
+            Our vocational programs teach practical skills, empowering youth and adults to secure sustainable employment and improve their livelihoods.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agricultural Sustainability -->
+      <div class="swiper-slide">
+        <div class="feature-card text-center p-4">
+          <h3 class="fw-bold mb-3" style="color:#12550f;">
+            <i class="fas fa-seedling me-2"></i>Agricultural Sustainability
+          </h3>
+          <img src="{% static 'images/farm.jpg' %}" alt="Agricultural Sustainability" class="img-fluid rounded-4 shadow mb-3" style="max-height:320px;object-fit:cover;">
+          <p style="font-size:1.15rem; color:#3d5c3d;">
+            We promote modern farming techniques and support local farmers, ensuring food security and economic growth for our communities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Health Care -->
+      <div class="swiper-slide">
+        <div class="feature-card text-center p-4">
+          <h3 class="fw-bold mb-3" style="color:#12550f;">
+            <i class="fas fa-heart me-2"></i>Health Care
+          </h3>
+          <img src="{% static 'images/img4.jpg' %}" alt="Health Care" class="img-fluid rounded-4 shadow mb-3" style="max-height:320px;object-fit:cover;">
+          <p style="font-size:1.15rem; color:#3d5c3d;">
+            We provide essential medical services, health education, and outreach programs to improve the well-being of every individual we serve.
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+
 
   <!-- Where We Serve Section -->
   <section class="container my-5">
@@ -415,7 +535,7 @@
       <div class="col-md-6" data-aos="fade-left">
         <div class="ratio rounded-4 shadow" style="aspect-ratio:16/9; min-height:600px; height:500px; overflow:hidden;">
           <video autoplay muted loop playsinline poster="{% static 'images/video-poster.jpg' %}" style="width:100%; height:100%; object-fit:cover; border-radius:1rem;">
-            <source src="{% static 'videos/imam.mp4' %}" type="video/mp4">
+            <source src="{% static 'videos/IMAN2.mp4' %}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
