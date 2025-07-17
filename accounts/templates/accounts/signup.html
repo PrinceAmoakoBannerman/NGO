@@ -12,34 +12,122 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     
 
-
-
-<a href="{% url 'home' %}">
-    <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="signup-logo">
-</a>
-<div class="signup-title">Sign up to volunteer</div>
-<div class="signup-form-container">
-    <form method="post">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="Username *" required>
-        <input type="text" name="first_name" placeholder="First Name *" required>
-        <input type="text" name="last_name" placeholder="Last Name *" required>
-        <select name="gender" required>
-            <option value="">Gender *</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </select>
-        <input type="number" name="age" placeholder="Age *" min="1" required>
-        <input type="text" name="mobile" placeholder="Mobile Number *" required>
-        <input type="email" name="email" placeholder="Email *" required>
-        <input type="password" name="password" placeholder="Password *" required>
-        <input type="text" name="availability" placeholder="Availability *" required>
-        <textarea name="comments" placeholder="Additional Comments" rows="3"></textarea>
-        <button type="submit">Sign Up</button>
-    </form>
-    <a href="{% url 'login' %}">Already have an account? Sign in</a>
-</div>
-
+    <style>
+    .signup-logo {
+        display: block;
+        margin: 40px auto 20px auto;
+        max-width: 180px;
+        width: 40%;
+    }
+    .signup-form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        background: #f9fafb;
+        padding: 32px 24px;
+        border-radius: 1.2rem;
+        box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+    }
+    .signup-title {
+        text-align: center;
+        color: #12550f;
+        margin-bottom: 24px;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    .signup-form-container input,
+    .signup-form-container select,
+    .signup-form-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border-radius: 6px;
+        border: 1px solid #d0dd94;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+    .signup-form-container button {
+        width: 100%;
+        padding: 10px;
+        background: #12550f;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    .signup-form-container a {
+        display: block;
+        text-align: center;
+        margin-top: 18px;
+        color: #4ab78e;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    .success-message {
+        color: #12550f;
+        background: #e6f9e6;
+        text-align: center;
+        padding: 12px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+        .signup-form-container {
+            max-width: 98vw;
+            width: 98vw;
+            margin: 24px auto;
+            padding: 18px 6px;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(18,85,15,0.07);
+        }
+        .signup-title {
+            font-size: 1.2rem;
+        }
+        .signup-form-container input,
+        .signup-form-container select,
+        .signup-form-container textarea,
+        .signup-form-container button {
+            font-size: 1.1rem;
+            padding: 14px;
+        }
+        .signup-logo {
+            max-width: 100px;
+            width: 60vw;
+            margin: 24px auto 12px auto;
+        }
+        .signup-form-container a {
+            font-size: 1.05rem;
+        }
+    }
+</style>
+    
+    <a href="{% url 'home' %}">
+        <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="signup-logo">
+    </a>
+    <div class="signup-title">Sign up to volunteer</div>
+    <div class="signup-form-container">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username *" required>
+            <input type="text" name="first_name" placeholder="First Name *" required>
+            <input type="text" name="last_name" placeholder="Last Name *" required>
+            <select name="gender" required>
+                <option value="">Gender *</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="number" name="age" placeholder="Age *" min="1" required>
+            <input type="text" name="mobile" placeholder="Mobile Number *" required>
+            <input type="email" name="email" placeholder="Email *" required>
+            <input type="password" name="password" placeholder="Password *" required>
+            <input type="text" name="availability" placeholder="Availability *" required>
+            <textarea name="comments" placeholder="Additional Comments" rows="3"></textarea>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="{% url 'login' %}">Already have an account? Sign in</a>
+    </div>
 </body>
 </html>
