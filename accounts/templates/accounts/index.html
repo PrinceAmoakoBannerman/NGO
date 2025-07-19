@@ -47,7 +47,7 @@
   <section class="aboutus-section">
     <div class="aboutus-container">
       <div class="aboutus-image">
-        <img src="{% static 'images/imanJ.png' %}" alt="IMAN Jibril Foundation">
+        <img src="{% static 'images/about.jpg' %}" alt="IMAN Jibril Foundation">
       </div>
       <div class="aboutus-text">
         <h2>About Us</h2>
@@ -61,33 +61,25 @@
     </div>
   </section>
 
-  <section class="about-us-section" style="background:#f9fafb; padding: 60px 0;">
-    <div class="container my-4" data-aos="fade-up" data-aos-duration="1200">
-      <div class="row justify-content-center text-center">
-        <div class="col-12 col-md-4 mb-3">
-          <div class="p-3 shadow-sm rounded-4 about-card h-100" data-aos="zoom-in" data-aos-delay="100">
-            <i class="fas fa-hands-helping" style="font-size:2.5rem;"></i>
-            <h5 class="mt-2 mb-1" style="font-weight:700;">Our Mission</h5>
-            <p class="mb-0 text-muted">Empowering communities through education, health, and sustainable development.</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 mb-3">
-          <div class="p-3 shadow-sm rounded-4 about-card h-100" data-aos="zoom-in" data-aos-delay="200">
-            <i class="fas fa-award" style="font-size:2.5rem;"></i>
-            <h5 class="mt-2 mb-1" style="font-weight:700;">Recognized Impact</h5>
-            <p class="mb-0 text-muted">Awarded for outstanding service and community transformation.</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 mb-3">
-          <div class="p-3 shadow-sm rounded-4 about-card h-100" data-aos="zoom-in" data-aos-delay="300">
-            <i class="fas fa-globe-africa" style="font-size:2.5rem;"></i>
-            <h5 class="mt-2 mb-1" style="font-weight:700;">Global Reach</h5>
-            <p class="mb-0 text-muted">Serving diverse communities across Africa and beyond.</p>
-          </div>
-        </div>
-      </div>
+  <section class="about-cards-section">
+  <div class="about-cards-container">
+    <div class="about-card">
+      <i class="fas fa-hands-helping"></i>
+      <h5>Our Mission</h5>
+      <p>Empowering communities through education, health, and sustainable development.</p>
     </div>
-  </section>
+    <div class="about-card">
+      <i class="fas fa-award"></i>
+      <h5>Recognized Impact</h5>
+      <p>Awarded for outstanding service and community transformation.</p>
+    </div>
+    <div class="about-card">
+      <i class="fas fa-globe-africa"></i>
+      <h5>Global Reach</h5>
+      <p>Serving diverse communities across Africa and beyond.</p>
+    </div>
+  </div>
+</section>
 
   <div style="width:100%; overflow:hidden; margin:0; padding:0;">
     <img src="{% static 'images/pattern.png' %}" alt="Section Separator Pattern" style="width:100%; display:block;">
@@ -139,6 +131,30 @@
     </div>
   </section>
 
+  <section class="impact-section">
+  <div class="impact-flex">
+    <div class="impact-left">
+      <h2>See Our Impact</h2>
+      <p>
+        Discover how your support is transforming lives. From building schools and clinics to empowering women and providing clean water, our projects are making a real difference in communities across Africa.
+      </p>
+    </div>
+    <div class="impact-right">
+      <video id="impactVideo" class="impact-video" autoplay muted controls playsinline>
+  <source src="{% static 'videos/IMAN2.mp4' %}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    var vid = document.getElementById('impactVideo');
+    vid.playbackRate = 0.7; // 0.5 is half speed, 1 is normal
+  });
+</script>
+    </div>
+  </div>
+</section>
+
+  
 <section class="cta-cards-section">
   <div class="cta-cards-container">
     <div class="cta-card donate">
