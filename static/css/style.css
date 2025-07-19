@@ -514,7 +514,7 @@ html, body {
     flex: 1 1 100%;
   }
 }
-  /*SECTION WITH MULTIPLE SLIDES*/
+ /*SECTION WITH MULTIPLE SLIDES*/
  /* TWO‐COLUMN LAYOUT */
 .content {
   display: flex;
@@ -556,7 +556,6 @@ html, body {
   transform: translateY(-50%);
   margin-right: 0;
 }
-
 /* THE “STAIR-STEP” BARS */
 .program-item {
   --indent: 0px;              
@@ -684,26 +683,39 @@ html, body {
   
   }
 
+.cta-card.donate {
+  background: #12550f;
+  color: #e9e5c7;
+}
+.cta-card.donate .cta-icon {
+  color: #e9e5c7;
+}
 
-/* Call to Action Cards */
-  .cta-cards-section {
-  width: 100%;
+.cta-card.in-kind {
+  background: #c87736;
+  color: #e9e5c7;
+}
+.cta-card.in-kind .cta-icon {
   background: #fff;
-  padding: 0;
-  margin: 0;
-}
-
-.cta-cards-container {
-  display: flex;
+  border-radius: 50%;
+  padding: 18px;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  align-items: stretch;
-  gap: 0;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: 340px;
+  color: #c87736;
+  font-size: 3.2rem;
+  margin-bottom: 18px;
 }
 
+.cta-card.volunteer {
+  background: #d79b3a;
+  color: #e9e5c7;
+}
+.cta-card.volunteer .cta-icon {
+  color: #e9e5c7;
+}
+
+/* General CTA card styles (keep as is or update if needed) */
 .cta-card {
   flex: 1 1 0;
   padding: 48px 18px 38px 18px;
@@ -711,27 +723,17 @@ html, body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: #f9f6e7;
   position: relative;
   min-width: 220px;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+  margin: 0 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.cta-card.donate {
-  background: #8c3933;
+.cta-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(18,85,15,0.12);
 }
-.cta-card.in-kind {
-  background: #c87736;
-}
-.cta-card.volunteer {
-  background: #d79b3a;
-}
-
-.cta-icon {
-  font-size: 3.2rem;
-  margin-bottom: 18px;
-  color: #f9f6e7;
-}
-
 .cta-card h3 {
   font-size: 2.1rem;
   font-family: 'Patrick Hand', cursive, Arial, sans-serif;
@@ -739,39 +741,25 @@ html, body {
   font-weight: bold;
   letter-spacing: 0.01em;
 }
-
 .cta-card p {
   font-size: 1.13rem;
   margin-bottom: 28px;
-  color: #f9f6e7;
 }
-
 .cta-btn {
   display: inline-block;
   padding: 12px 38px;
-  border: 1.5px solid #f9f6e7;
+  border: 1.5px solid #e9e5c7;
   border-radius: 24px;
   background: transparent;
-  color: #f9f6e7;
+  color: #e9e5c7;
   font-size: 1.08rem;
   font-weight: bold;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
 .cta-btn:hover, .cta-btn:focus {
-  background: #f9f6e7;
-  color: #8c3933;
-}
-
-@media (max-width: 900px) {
-  .cta-cards-container {
-    flex-direction: column;
-    min-height: unset;
-  }
-  .cta-card {
-    min-width: 0;
-    padding: 38px 8vw 32px 8vw;
-  }
+  background: #e9e5c7;
+  color: #12550f;
 }
 
 .impact-section {
@@ -855,5 +843,99 @@ html, body {
   .impact-video {
     max-width: 98vw;
     margin: 0 auto;
+  }
+}
+
+.programs-slider-section {
+  background: #f9fafb;
+  padding: 60px 0 40px 0;
+  text-align: center;
+}
+.programs-title {
+  font-size: 2.2rem;
+  margin-bottom: 28px;
+  color: #12550f;
+  font-family: 'Patrick Hand', cursive, Arial, sans-serif;
+}
+.programs-slider {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+  background: #fff;
+}
+.program-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 18px 28px 18px;
+  min-height: 420px;
+  transition: opacity 0.5s;
+}
+.program-slide.active {
+  display: flex;
+  animation: fadeIn 0.7s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.program-img {
+  width: 100%;
+  max-width: 600px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 18px;
+}
+.program-slide h3 {
+  font-size: 1.5rem;
+  color: #12550f;
+  margin-bottom: 10px;
+  font-family: 'Patrick Hand', cursive, Arial, sans-serif;
+}
+.program-slide p {
+  font-size: 1.08rem;
+  color: #39231a;
+}
+.programs-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #12550f;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.8;
+  transition: background 0.2s;
+}
+.programs-arrow:hover {
+  background: #196c24;
+}
+.programs-arrow.prev {
+  left: 12px;
+}
+.programs-arrow.next {
+  right: 12px;
+}
+@media (max-width: 800px) {
+  .programs-slider {
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .program-img {
+    max-width: 98vw;
+    height: 140px;
+  }
+  .program-slide {
+    padding: 18px 4vw 18px 4vw;
+    min-height: 320px;
   }
 }
