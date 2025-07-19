@@ -55,14 +55,15 @@ def donate_view(request):
     return render(request, 'accounts/donate.html')
 
 
-@login_required
+# Profile view to display user information
 def volunteer_view(request):
     context = {}
     if request.method == 'POST':
+        phone_number = request.POST.get('phone_number')
         if Volunteer.objects.filter(user=request.user).exists():
             context['volunteer_message'] = "Thank you for volunteering! You are already registered as a volunteer."
         else:
-            Volunteer.objects.create(user=request.user)
+            Volunteer.objects.create(user=request.user, phone_number=phone_number)
             context['volunteer_message'] = "Thank you for signing up as a volunteer! Our team will contact you soon."
     return render(request, 'accounts/volunteer.html', context)
 

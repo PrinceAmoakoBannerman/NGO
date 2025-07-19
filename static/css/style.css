@@ -547,15 +547,8 @@ html, body {
   flex: 1;
   position: relative;
 }
-.program-list {
-  list-style: none;
-  position: absolute;
-  top: 50%;
-  right: -50;
-  width: 100%;
-  transform: translateY(-50%);
-  margin-right: 0;
-}
+
+
 /* THE “STAIR-STEP” BARS */
 .program-item {
   --indent: 0px;              

@@ -110,18 +110,26 @@
 </head>
 <body>
     <div class="volunteer-section">
-        <a href="{% url 'home' %}">
-            <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="volunteer-logo">
-        </a>
-        <h3>Become a Volunteer</h3>
-        <p>
-            Thank you for your interest in volunteering with IMAN Jibril Foundation.<br>
-            Please click "Accept" below to confirm your registration as a volunteer.
-        </p>
-        <form method="post" action="{% url 'signup' %}">
-            {% csrf_token %}
-            <button type="submit" class="btn volunteer">Accept</button>
-        </form>
-    </div>
+    <a href="{% url 'home' %}">
+        <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="volunteer-logo">
+    </a>
+    <h3>Become a Volunteer</h3>
+    <p>
+        Thank you for your interest in volunteering with IMAN Jibril Foundation.<br>
+        Please click "Accept" below to confirm your registration as a volunteer.
+    </p>
+
+    {% if volunteer_message %}
+        <div style="margin-bottom:18px; color:#12550f; background:#e9e5c7; border-radius:8px; padding:12px;">
+            {{ volunteer_message }}
+        </div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="phone_number" placeholder="Phone Number" required>
+        <button type="submit" class="btn volunteer">Accept</button>
+    </form>
+</div>
 </body>
 </html>
