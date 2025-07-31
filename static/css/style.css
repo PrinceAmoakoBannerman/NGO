@@ -932,3 +932,20 @@ html, body {
     min-height: 320px;
   }
 }
+
+.impact-map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.impact-map-image {
+    max-width: 672px;   /* 60% larger than 420px */
+    width: 160%;        /* 60% larger than 100% */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+    display: block;
+    margin: 0 auto;
+}
