@@ -949,3 +949,83 @@ html, body {
     display: block;
     margin: 0 auto;
 }
+
+.aboutus-section {
+    background: #f9fafb;
+    padding: 48px 0 32px 0;
+}
+
+.aboutus-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.aboutus-image img {
+    width: 320px;
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(18,85,15,0.10);
+    margin-bottom: 18px;
+}
+
+.aboutus-text {
+    flex: 1;
+    min-width: 260px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+    padding: 32px 28px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.aboutus-text h2 {
+    font-size: 2.2rem;
+    color: #12550f;
+    font-family: 'Patrick Hand', cursive, Arial, sans-serif;
+    margin-bottom: 12px;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+}
+
+.aboutus-bar {
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: #e3a93b;
+    border-radius: 2px;
+    margin-bottom: 18px;
+}
+
+.aboutus-text p {
+    font-size: 1.18rem;
+    color: #39231a;
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 800px) {
+    .aboutus-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+    .aboutus-text {
+        padding: 22px 12px;
+    }
+    .aboutus-image img {
+        width: 98vw;
+        max-width: 340px;
+    }
+    .aboutus-text h2 {
+        font-size: 1.5rem;
+    }
+    .aboutus-text p {
+        font-size: 1.05rem;
+    }
+}

@@ -6,10 +6,10 @@ from .models import Volunteer
 
 @admin.register(Volunteer)
 class VolunteerAdmin(admin.ModelAdmin):
-    list_display = ('user', 'mobile_number', 'get_email', 'status', 'date_joined')
-    search_fields = ('user__username', 'user__email', 'mobile_number')
+    list_display = ('user', 'phone_number', 'get_email', 'status', 'date_joined')
+    search_fields = ('user__username', 'user__email', 'phone_number')
     list_filter = ('status',)
-    fields = ('user', 'mobile_number', 'status', 'date_joined')
+    fields = ('user', 'phone_number', 'status', 'date_joined')
     readonly_fields = ('date_joined',)
 
     def get_email(self, obj):
