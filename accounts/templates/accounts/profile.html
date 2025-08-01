@@ -1,9 +1,10 @@
+<!-- filepath: c:\Users\princ\Desktop\IMAN\accounts\templates\accounts\profile.html -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Profile - IMAN NGO</title>
+    <title>Your Profile - IMAN Jibril Foundation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <style>
@@ -97,6 +98,37 @@
         .profile-info a:hover {
             text-decoration: underline;
         }
+        .events-list {
+            margin-top: 8px;
+        }
+        .event-card {
+            background: #f6f3e6;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(18,85,15,0.07);
+            padding: 14px 12px;
+            margin-bottom: 16px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .event-card img {
+            max-width: 100%;
+            max-height: 120px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            object-fit: cover;
+        }
+        .event-card strong {
+            color: #12550f;
+            font-size: 1.08rem;
+        }
+        .event-card span {
+            font-size: 1rem;
+            color: #39231a;
+            display: block;
+            margin-bottom: 3px;
+        }
         @media (max-width: 600px) {
             .profile-header {
                 margin-top: 16px;
@@ -131,6 +163,9 @@
                 width: 100%;
                 border-radius: 7px;
             }
+            .event-card {
+                padding: 10px 4px;
+            }
         }
         @media (max-width: 370px) {
             .profile-card {
@@ -160,7 +195,23 @@
         <div class="profile-info">Active Volunteer</div>
         <div class="profile-section-title">Upcoming Opportunities</div>
         <div class="profile-info">
-            No upcoming events. <a href="{% url 'home' %}">View all opportunities</a>
+            {% if upcoming_events %}
+                <div class="events-list">
+                    {% for event in upcoming_events %}
+                        <div class="event-card">
+                            {% if event.image %}
+                                <img src="{{ event.image.url }}" alt="{{ event.name }}">
+                            {% endif %}
+                            <strong>{{ event.name }}</strong>
+                            <span>{{ event.description }}</span>
+                            <span><strong>Date:</strong> {{ event.date }}</span>
+                            <span><strong>Location:</strong> {{ event.location }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                No upcoming events. <a href="{% url 'home' %}">View all opportunities</a>
+            {% endif %}
         </div>
         <div class="profile-actions">
             <form method="post" action="{% url 'signout' %}">

@@ -163,3 +163,10 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 LOGIN_URL = '/login/'
+
+
+PAYSTACK_PUBLIC_KEY = 'pk_test_79e6e394c132cb7c329e33e8377bd2f4bb54aad0'
+PAYSTACK_SECRET_KEY = 'sk_test_9711cb5ff52e81f5fb6a5db305b0e04b4eb9aa4c'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

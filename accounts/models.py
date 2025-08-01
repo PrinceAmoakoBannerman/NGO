@@ -12,20 +12,22 @@ class Volunteer(models.Model):
         return self.user.username
 
 class Donation(models.Model):
-    donor = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    date = models.DateField(auto_now_add=True)
-    message = models.CharField(max_length=255, blank=True)
+    reference = models.CharField(max_length=100, unique=True)
+    email = models.EmailField()
+    date = models.DateTimeField(auto_now_add=True)
+    message = models.TextField(blank=True)
 
     def __str__(self):
-        return f"{self.donor.username} - {self.amount}"
+        return f"{self.email} - {self.amount}"
 
 class Event(models.Model):
     name = models.CharField(max_length=128)
     description = models.TextField()
     date = models.DateField()
     location = models.CharField(max_length=128)
+    image = models.ImageField(upload_to='event_images/', blank=True, null=True)  # Add this line
 
     def __str__(self):
         return self.name
-

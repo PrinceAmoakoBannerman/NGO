@@ -6,9 +6,18 @@ from django.contrib.auth.decorators import login_required
 from .models import Volunteer
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
+from django.conf import settings
+from paystackapi.transaction import Transaction
+from django.shortcuts import render, redirect
+from .models import Donation
+from .models import Event
+from django.utils import timezone
+
 
 def home(request):
-    return render(request, 'accounts/index.html')
+    upcoming_events = Event.objects.filter(date__gte=timezone.now()).order_by('date')
+    return render(request, 'accounts/index.html', {'upcoming_events': upcoming_events})
+
 
 def signup_view(request):
     if request.method == 'POST':
@@ -52,8 +61,11 @@ def signout_view(request):
     return redirect('login')
 
 def donate_view(request):
-    return render(request, 'accounts/donate.html')
-
+    context = {
+        'PAYSTACK_PUBLIC_KEY': settings.PAYSTACK_PUBLIC_KEY,
+        # ... other context ...
+    }
+    return render(request, 'accounts/donate.html', context)
 
 # Profile view to display user information
 def volunteer_view(request):
@@ -69,4 +81,23 @@ def volunteer_view(request):
 
 @login_required
 def profile_view(request):
-    return render(request, 'accounts/profile.html')
+    upcoming_events = Event.objects.filter(date__gte=timezone.now()).order_by('date')
+    return render(request, 'accounts/profile.html', {'upcoming_events': upcoming_events})
+
+def verify_payment(request):
+    reference = request.GET.get('reference')
+    response = Transaction.verify(reference)
+    print(response)  # Debug: See Paystack response in your terminal
+    if response['status'] and response['data']['status'] == 'success':
+        amount = response['data']['amount'] / 100
+        email = response['data']['customer']['email']
+        donation = Donation.objects.create(
+            amount=amount,
+            reference=reference,
+            email=email,
+            user=request.user if request.user.is_authenticated else None
+        )
+        print(donation)  # Debug: Confirm donation is created
+        return render(request, 'accounts/payment_success.html', {'reference': reference})
+    else:
+        return render(request, 'accounts/payment_failed.html', {'reference': reference})

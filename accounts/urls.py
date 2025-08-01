@@ -1,6 +1,7 @@
 from django.contrib.auth import views as auth_views
 from django.urls import path
 from . import views
+from .views import verify_payment
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -14,5 +15,7 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('profile/', views.profile_view, name='profile'),
     path('volunteer/', views.volunteer_view, name='volunteer'),
-    
+    path('verify-payment/', verify_payment, name='verify_payment'),
+
+
 ]

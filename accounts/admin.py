@@ -18,8 +18,8 @@ class VolunteerAdmin(admin.ModelAdmin):
 
 @admin.register(Donation)
 class DonationAdmin(admin.ModelAdmin):
-    list_display = ('donor', 'amount', 'date', 'message')
-    search_fields = ('donor__username', 'donor__email')
+    list_display = ('user', 'amount', 'date', 'message')
+    search_fields = ('user__username', 'user__email')
     list_filter = ('date',)
 
 @admin.register(Event)
